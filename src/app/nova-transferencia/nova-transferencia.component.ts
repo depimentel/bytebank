@@ -14,11 +14,15 @@ export class NovaTransferenciaComponent {
 
   transferir(){
     console.log('Solicitada nova transferência');
+
     const valorEmitir = { valor: this.valor, destino: this.destino };
     this.aoTransferir.emit(valorEmitir);
 
-    // console.log('Valor: ', this.valor);
-    // console.log('Destino: ', this.destino);
+    this.limparCampos();
   }
 
+  limparCampos(){
+    this.valor = 0;
+    this.destino = 0;
+  }
 }
